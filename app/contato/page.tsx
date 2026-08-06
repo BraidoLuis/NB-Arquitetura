@@ -1,8 +1,14 @@
 import { PageShell } from "../components";
+import Link from "next/link";
 
 export default function Contato() {
   return (
     <PageShell>
+      <div style={{ padding: "130px 5vw 0" }}>
+        <Link href="/" className="text-link">
+          ← Voltar ao início
+        </Link>
+      </div>
       <section className="page-intro">
         <p className="eyebrow">05 · Contato</p>
         <div>

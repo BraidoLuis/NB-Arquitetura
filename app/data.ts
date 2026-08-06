@@ -1,7 +1,7 @@
 export const projects = [
   {
     slug: "gll-topografia",
-    type: "Interiores comercial",
+    type: "Comercial",
     title: "GLL Topografia",
     subtitle: "Identidade visual e espaço de trabalho",
     place: "Nova Friburgo · 2025",

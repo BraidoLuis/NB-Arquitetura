@@ -153,7 +153,7 @@ export default function Home() {
                 desde o levantamento inicial até o acompanhamento da execução da obra.
               </p>
 
-              <Link className="button-outline" href="/comercial">
+              <Link className="button-outline" href="/projetos/gll-topografia">
                 Conhecer o projeto
               </Link>
             </div>

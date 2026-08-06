@@ -5,6 +5,11 @@ import Link from "next/link";
 export default function Externos() {
   return (
     <PageShell>
+      <div style={{ padding: "130px 5vw 0" }}>
+        <Link href="/" className="text-link">
+          ← Voltar ao início
+        </Link>
+      </div>
       <section className="page-intro">
         <p className="eyebrow">04 · Externos</p>
         <div>
