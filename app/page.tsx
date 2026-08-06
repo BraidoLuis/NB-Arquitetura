@@ -159,6 +159,41 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className="selected">
+          <p className="eyebrow">Em andamento · 2026</p>
+
+          <div className="selected-grid">
+            <div className="selected-image">
+              <img
+                src="/images/loft-2.png"
+                alt="Projeto em andamento"
+              />
+            </div>
+
+            <div>
+              <span>Lofts Cabo Frio</span>
+
+              <h2>
+                Em breve:<br />
+                um novo <em>capítulo.</em>
+              </h2>
+
+              <p>
+                Estamos desenvolvendo um projeto que une inovação, conforto e sustentabilidade.
+                Acompanhe as novidades em nosso Instagram e fique por dentro de cada etapa.
+              </p>
+
+              <a
+                className="button-outline"
+                href="https://www.instagram.com/arq_natasha_almeida/"
+                target="_blank"
+              >
+                Acompanhar no Instagram ↗
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
 
       <div className="home-footer">
