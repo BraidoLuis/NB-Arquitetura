@@ -842,7 +842,7 @@ em {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4vw;
-  padding: 10vh 5vw;
+  padding: 3vh 5vw;
   min-height: 100vh;
 }
 
@@ -908,7 +908,7 @@ em {
   .project-detail {
     grid-template-columns: 1fr;
     gap: 30px;
-    padding: 30vh 25px 50px;
+    padding: 4vh 25px 50px;
   }
 
   .gallery-grid {
