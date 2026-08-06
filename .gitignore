@@ -1,0 +1,15 @@
+# dependências
+/node_modules
+
+# arquivos gerados pelo Next.js
+/.next
+/out
+
+# arquivos locais
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Vercel
+.vercel
