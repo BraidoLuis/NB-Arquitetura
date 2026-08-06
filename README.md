@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # NB Arquitetura e Interiores
 
 Portfólio responsivo desenvolvido em Next.js, React, TypeScript e CSS. Esta versão está preparada para desenvolvimento local e deploy direto na Vercel.
@@ -55,3 +56,6 @@ vercel
 ```
 
 Não é necessário configurar variáveis de ambiente para a versão atual.
+=======
+# NB-Arquitetura
+>>>>>>> 8716b702ca4a64789341099b1e16b0461f3c674d
