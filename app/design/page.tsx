@@ -4,7 +4,7 @@ export default function Design() {
   return (
     <PageShell>
       <section className="page-intro">
-        <p className="eyebrow">04 · Design</p>
+        <p className="eyebrow">05 · Design</p>
         <div>
           <h1>
             Detalhes que criam<em>identidade.</em>
@@ -18,7 +18,7 @@ export default function Design() {
       <section className="content-section design-grid">
         <article className="design-card">
           <img
-            src="/images/design-caderno.png"
+            src="/images/design-cartao.jpeg"
             alt="Caderno com identidade visual NB"
           />
           <div>

@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "NB — Arquitetura e Interiores",
+  title: "Natasha Bandeira - Arquitetura",
   description: "Arquitetura, interiores e design com intenção, sensibilidade e identidade.",
   other: {
     "codex-preview": "development",
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/images/favicon.png",
+    shortcut: "/images/favicon.png",
   },
 };
 

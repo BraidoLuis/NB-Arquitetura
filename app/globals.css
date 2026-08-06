@@ -53,7 +53,6 @@ em {
 .site-header {
   position: fixed;
   z-index: 100;
-  background-color: #f5f1ec;
   top: 0;
   left: 0;
   width: 100%;
@@ -75,6 +74,11 @@ em {
 .brand {
   font-size: 34px;
   line-height: 1;
+}
+
+.brand img{
+  width: 80px;
+  height: auto;
 }
 
 .brand span:first-child {
@@ -146,26 +150,62 @@ em {
   visibility: visible;
 }
 
-.menu-panel > a {
+/* Container que divide links e imagem lado a lado */
+.menu-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4vw;
+  flex: 1; /* ocupa o espaço entre o título e os contatos */
+}
+
+/* Coluna de links */
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Estilos dos links (mesmos do antigo .menu-panel > a) */
+.menu-links a {
   font-family: "Italiana", serif;
-  font-size: clamp(38px, 6vw, 56px);
+  font-size: clamp(24px, 6vw, 36px);
   line-height: 2;
   border-bottom: 1px solid rgba(36, 33, 30, 0.13);
   transform: translateY(15px);
   transition: 0.3s;
 }
 
-.menu-panel.is-open > a {
+.menu-panel.is-open .menu-links a {
   transform: none;
 }
 
-.menu-panel > a small {
+.menu-links a small {
   font: 300 10px "DM Sans";
   display: inline-block;
   width: 40px;
   letter-spacing: 0.2em;
 }
 
+/* Área da imagem ao lado */
+.menu-image {
+  flex-shrink: 0;
+  width: min(300px, 30vw);
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-leque {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Contatos no rodapé do menu */
 .menu-contact {
   margin-top: auto;
   display: flex;
@@ -173,6 +213,26 @@ em {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.13em;
+}
+
+@media (max-width: 750px) {
+  .menu-content {
+    flex-direction: column;
+    gap: 30px;
+    overflow-y: auto;
+  }
+
+  .menu-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    order: 1; 
+  }
+
+  .menu-links {
+    order: 0;
+    width: 100%;
+  }
 }
 
 .hero {
@@ -352,7 +412,7 @@ em {
   display: inline-flex;
   gap: 30px;
   border-bottom: 1px solid;
-  padding: 0 0 9px;
+  padding: 10 0 5px;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-size: 11px;
@@ -483,8 +543,16 @@ em {
   background: rgba(101, 82, 68, 0.93);
 }
 
+.collage-d {
+  background: #e9e1d6; 
+}
+
+.collage-d .chapter-title {
+  background: rgba(173, 113, 91, 0.93);
+}
+
 .selected {
-  padding: 12vw 8vw;
+  padding: 5vw 8vw !important;
 }
 
 .selected > .eyebrow {
@@ -767,13 +835,107 @@ em {
   line-height: 2;
 }
 
+.project-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4vw;
+  padding: 10vh 5vw;
+  min-height: 100vh;
+}
+
+.project-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vw;
+}
+
+.hero-image {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 70vh;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5vw;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4/3; /* ajuste conforme necessidade */
+  border-radius: 4px;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start !important;
+}
+
+.project-title {
+  font: 400 clamp(40px, 5vw, 72px) "Italiana", serif;
+  line-height: 1;
+  margin: 15px 0;
+}
+
+.project-subtitle {
+  font: 300 18px "DM Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--clay);
+  margin-bottom: 25px;
+}
+
+.project-text {
+  line-height: 1.8;
+  font-size: 14px;
+  max-width: 500px;
+}
+
+@media (max-width: 780px) {
+  .project-detail {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30vh 25px 50px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-info {
+    order: -1; /* informações antes das imagens no mobile */
+  }
+}
+
 @media (max-width: 780px) {
   .site-header {
     padding: 0px 20px;
   }
 
   .menu-panel {
-    padding: 15vh 25px 6vh;
+    padding: 11vh 25px 6vh;
+  }
+
+  .contact-copy p{
+    text-align: center;
+  }
+
+  .contact-meta{
+    text-align: center;
+  }
+
+  .page-intro p{
+    text-align: center;
   }
 
   .menu-panel > a {
@@ -823,6 +985,7 @@ em {
     width: 45%;
     height: 28%;
     left: 26%;
+    bottom: 4%;
   }
 
   .chapter-title {

@@ -5,45 +5,82 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const links = [
-  ["Início", "/"], ["Minha História", "/sobre"], ["Interiores", "/projetos"],
-  ["Comercial", "/interiores"], ["Externos", "/design"], ["Contato", "/contato"],
+  ["Início", "/"],
+  ["Minha História", "/sobre"],
+  ["Interiores", "/interiores"],
+  ["Comercial", "/comercial"],
+  ["Externos", "/externos"],
+  ["Design", "/design"],
+  ["Contato", "/contato"],
 ] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
-  return <>
-    <header className="site-header">
-      <Link className="brand" href="/" aria-label="NB — página inicial">
-        <Image
-          src="/images/logo2.png"
-          alt="NB Arquitetura"
-          width={120}
-          height={50}
-          priority
-        />
-      </Link>
+  return (
+    <>
+      <header className="site-header">
+        <Link className="brand" href="/" aria-label="NB — página inicial">
+          <Image
+            src="/images/logo2.png"
+            alt="NB Arquitetura"
+            width={120}
+            height={50}
+            priority
+          />
+        </Link>
 
-      <button
-        className={`menu-button ${open ? "is-open" : ""}`}
-        onClick={() => setOpen(!open)}
-        aria-label={open ? "Fechar menu" : "Abrir menu"}
-        aria-expanded={open}
-      >
-        <span />
-        <span />
-        <span />
-      </button>
-    </header>
-    <nav className={`menu-panel ${open ? "is-open" : ""}`} aria-hidden={!open}>
-      <p className="eyebrow">Navegação</p>
-      {links.map(([label, href], i) => <Link key={href} href={href} onClick={() => setOpen(false)}><small>0{i + 1}</small>{label}</Link>)}
-      <div className="menu-contact"><a href="mailto:arq.natashabandeira@gmail.com">arq.natashabandeira@gmail.com</a><a href="https://www.instagram.com/arq_natasha_almeida/" target="_blank">Instagram ↗</a></div>
-    </nav>
-  </>;
+        <button
+          className={`menu-button ${open ? "is-open" : ""}`}
+          onClick={() => setOpen(!open)}
+          aria-label={open ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={open}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </header>
+      <nav className={`menu-panel ${open ? "is-open" : ""}`} aria-hidden={!open}>
+        <p className="eyebrow">Navegação</p>
+        <div className="menu-content">
+          <div className="menu-links">
+            {links.map(([label, href], i) => (
+              <Link key={href} href={href} onClick={() => setOpen(false)}>
+                <small>0{i + 1}</small>
+                {label}
+              </Link>
+            ))}
+          </div>
+          <div className="menu-image">
+            <Image
+              src="/images/foto-leque.jpeg"
+              alt="Detalhe decorativo"
+              width={400}
+              height={500}
+              className="menu-leque"
+            />
+          </div>
+        </div>
+        <div className="menu-contact">
+          <a href="mailto:arq.natashabandeira@gmail.com">
+            arq.natashabandeira@gmail.com
+          </a>
+          <a
+            href="https://www.instagram.com/arq_natasha_almeida/"
+            target="_blank"
+          >
+            Instagram ↗
+          </a>
+        </div>
+      </nav>
+    </>
+  );
 }
 
 export function Footer() {
@@ -66,7 +103,20 @@ export function Reveal({ children, className = "" }: { children: React.ReactNode
 }
 
 export function HomeScrollController() {
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
+    // Detecta se é mobile (mesmo breakpoint do CSS: 780px)
+    const check = () => setIsMobile(window.innerWidth < 780);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  useEffect(() => {
+    // Se for mobile, não faz nada (scroll normal)
+    if (isMobile) return;
+
     const sectionSelector = [
       ".home-page > .hero",
       ".home-page > .manifesto",
@@ -90,13 +140,11 @@ export function HomeScrollController() {
 
       sections.forEach((section, index) => {
         const distance = Math.abs(section.getBoundingClientRect().top);
-
         if (distance < closestDistance) {
           closestDistance = distance;
           closestIndex = index;
         }
       });
-
       return closestIndex;
     }
 
@@ -112,57 +160,42 @@ export function HomeScrollController() {
       }
 
       function animation(currentTime: number) {
-        if (startTime === null) {
-          startTime = currentTime;
-        }
-
+        if (startTime === null) startTime = currentTime;
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
-
         window.scrollTo(
           0,
           startPosition + distance * easeInOutCubic(progress)
         );
-
         if (elapsed < duration) {
           requestAnimationFrame(animation);
         }
       }
-
       requestAnimationFrame(animation);
     }
 
     function goToSection(direction: 1 | -1) {
       if (isScrolling) return;
-
-      // Não interfere enquanto o menu estiver aberto
       if (document.querySelector(".menu-panel.is-open")) return;
 
       const sections = getSections();
       const currentIndex = getCurrentSectionIndex(sections);
-
       const nextIndex = Math.min(
         Math.max(currentIndex + direction, 0),
         sections.length - 1
       );
-
       if (nextIndex === currentIndex) return;
 
       isScrolling = true;
-
       smoothScrollTo(sections[nextIndex].offsetTop, 1000);
-
       window.setTimeout(() => {
         isScrolling = false;
       }, 1000);
     }
 
     function handleWheel(event: WheelEvent) {
-      // Evita ativar com movimentos muito pequenos do touchpad
       if (Math.abs(event.deltaY) < 15) return;
-
       event.preventDefault();
-
       if (event.deltaY > 0) {
         goToSection(1);
       } else {
@@ -178,27 +211,18 @@ export function HomeScrollController() {
         event.preventDefault();
         goToSection(1);
       }
-
       if (previousKeys.includes(event.key)) {
         event.preventDefault();
         goToSection(-1);
       }
-
       if (event.key === "Home") {
         event.preventDefault();
-        getSections()[0]?.scrollIntoView({
-          behavior: "smooth",
-        });
+        getSections()[0]?.scrollIntoView({ behavior: "smooth" });
       }
-
       if (event.key === "End") {
         event.preventDefault();
-
         const sections = getSections();
-
-        sections[sections.length - 1]?.scrollIntoView({
-          behavior: "smooth",
-        });
+        sections[sections.length - 1]?.scrollIntoView({ behavior: "smooth" });
       }
     }
 
@@ -209,9 +233,7 @@ export function HomeScrollController() {
     function handleTouchEnd(event: TouchEvent) {
       const touchEndY = event.changedTouches[0]?.clientY ?? 0;
       const difference = touchStartY - touchEndY;
-
       if (Math.abs(difference) < 60) return;
-
       if (difference > 0) {
         goToSection(1);
       } else {
@@ -219,17 +241,10 @@ export function HomeScrollController() {
       }
     }
 
-    window.addEventListener("wheel", handleWheel, {
-      passive: false,
-    });
-
+    window.addEventListener("wheel", handleWheel, { passive: false });
     window.addEventListener("keydown", handleKeyDown);
-    window.addEventListener("touchstart", handleTouchStart, {
-      passive: true,
-    });
-    window.addEventListener("touchend", handleTouchEnd, {
-      passive: true,
-    });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true });
 
     return () => {
       window.removeEventListener("wheel", handleWheel);
@@ -237,7 +252,7 @@ export function HomeScrollController() {
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchend", handleTouchEnd);
     };
-  }, []);
+  }, [isMobile]); // reexecuta se isMobile mudar
 
   return null;
 }

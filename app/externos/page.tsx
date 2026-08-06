@@ -2,24 +2,24 @@ import { PageShell } from "../components";
 import { projects } from "../data";
 import Link from "next/link";
 
-export default function Interiores() {
+export default function Externos() {
   return (
     <PageShell>
       <section className="page-intro">
-        <p className="eyebrow">02 · Interiores</p>
+        <p className="eyebrow">04 · Externos</p>
         <div>
           <h1>
-            Interiores que<em>encantam.</em>
+            Externos que<em>integram paisagem.</em>
           </h1>
           <p>
-            Ambientes pensados para acolher, inspirar e traduzir a essência de quem vive cada espaço.
+            Projetos que conectam arquitetura e natureza, valorizando o entorno e criando espaços ao ar livre com identidade.
           </p>
         </div>
       </section>
 
       <section className="projects-list">
         {projects
-          .filter((p) => p.type.toLowerCase().includes("interiores"))
+          .filter((p) => p.type.toLowerCase().includes("externo"))
           .map((p, i) => (
             <article className="project-card" key={p.slug}>
               <span>0{i + 1}</span>
@@ -29,11 +29,11 @@ export default function Interiores() {
                 alt={p.title}
               />
               <div>
-                <small>Interiores · {p.place}</small>
+                <small>Externos · {p.place}</small>
                 <h2>{p.title}</h2>
                 <p>{p.summary}</p>
                 <Link className="text-link" href={`/projetos/${p.slug}`}>
-                  Ver projeto <span>↗</span>
+                Ver projeto <span>↗</span>
                 </Link>
               </div>
             </article>

@@ -17,7 +17,7 @@ const chapters = [
       "/images/interiores3.jpeg",
       "/images/interiores4.jpeg",
     ],
-    href: "/projetos",
+    href: "/interiores",
     cls: "collage-a",
   },
   {
@@ -30,7 +30,7 @@ const chapters = [
       "/images/comercial-3.jpeg",
       "/images/comercial-4.jpeg",
     ],
-    href: "/interiores",
+    href: "/comercial",
     cls: "collage-b",
   },
   {
@@ -43,8 +43,21 @@ const chapters = [
       "/images/externo-3.jpeg",
       "/images/externo-4.jpeg",
     ],
-    href: "/design",
+    href: "/externos",
     cls: "collage-c",
+  },
+  {
+    n: "04",
+    title: "Design",
+    desc: "Detalhes que criam identidade: do cartão ao objeto, a marca ganha vida.",
+    images: [
+      "/images/logo-nb.jpeg",
+      "/images/design-cartao.jpeg",
+      "/images/design-caneca.png",
+      "/images/design-caderno.png",
+    ],
+    href: "/design",
+    cls: "collage-d",
   },
 ];
 
@@ -122,7 +135,7 @@ export default function Home() {
 
           <div className="selected-grid">
             <div className="selected-image">
-              <img src="/images/destaque.jpeg" alt="Projeto GLL Topografia" />
+              <img src="/images/gll-1.jpeg" alt="Projeto GLL Topografia" />
             </div>
 
             <div>
@@ -140,7 +153,7 @@ export default function Home() {
                 desde o levantamento inicial até o acompanhamento da execução da obra.
               </p>
 
-              <Link className="button-outline" href="/projetos">
+              <Link className="button-outline" href="/comercial">
                 Conhecer o projeto
               </Link>
             </div>
