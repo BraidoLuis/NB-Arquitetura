@@ -222,7 +222,7 @@ em {
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
 }
 
@@ -355,7 +355,7 @@ em {
   padding: 0 0 9px;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .chapter {
@@ -373,7 +373,7 @@ em {
 
 .crop {
   position: absolute;
-  background-size: 100vw auto;
+  background-size: cover;
   background-repeat: no-repeat;
   box-shadow: 0 20px 60px rgba(40, 30, 20, 0.08);
   animation: float-in linear both;
@@ -454,14 +454,14 @@ em {
 .chapter-title p {
   max-width: 390px;
   margin: 18px auto;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
 }
 
 .chapter-title a {
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: 9px;
+  font-size: 11px;
   border-bottom: 1px solid;
   padding-bottom: 5px;
 }
@@ -513,13 +513,13 @@ em {
 .selected-grid > div:last-child > span {
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .selected-grid p {
   max-width: 400px;
   line-height: 1.8;
-  font-size: 13px;
+  font-size: 14px;
   margin-bottom: 38px;
 }
 
@@ -541,7 +541,7 @@ em {
 .footer {
   background: #26221f;
   color: #eee8e1;
-  padding: 10vw 7vw 35px;
+  padding: 5vw 5vw 35px;
 }
 
 .footer h2 {
@@ -604,12 +604,12 @@ em {
 }
 
 .content-section {
-  padding: 10vw 8vw;
+  padding: 5vw 8vw;
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 8vw;
   align-items: start;
 }
@@ -618,10 +618,6 @@ em {
   height: 75vh;
   object-fit: cover;
   object-position: center;
-}
-
-.about-grid .portrait {
-    object-fit: contain;
 }
 
 .prose {
@@ -644,20 +640,21 @@ em {
 }
 
 .timeline {
-  margin-top: 60px;
+    max-width: fit-content;
+  margin: 0 auto;
 }
 
 .timeline div {
   display: grid;
   grid-template-columns: 90px 1fr;
   border-top: 1px solid var(--line);
-  padding: 20px 0;
-  font-size: 12px;
+  padding: 20px 20px;
+  gap: 10px;
+  font-size: 14px;
 }
 
 .download-row {
-  margin-top: 45px;
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
 }
@@ -772,7 +769,7 @@ em {
 
 @media (max-width: 780px) {
   .site-header {
-    padding: 18px 20px;
+    padding: 0px 20px;
   }
 
   .menu-panel {
@@ -853,7 +850,7 @@ em {
   }
 
   .footer {
-    padding: 100px 25px 25px;
+    padding: 50px 25px 25px;
   }
 
   .footer-links {

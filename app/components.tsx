@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const links = [
-  ["Início", "/"], ["Sobre mim", "/sobre"], ["Projetos", "/projetos"],
-  ["Interiores", "/interiores"], ["Design", "/design"], ["Contato", "/contato"],
+  ["Início", "/"], ["Minha História", "/sobre"], ["Interiores", "/projetos"],
+  ["Comercial", "/interiores"], ["Externos", "/design"], ["Contato", "/contato"],
 ] as const;
 
 export function Header() {

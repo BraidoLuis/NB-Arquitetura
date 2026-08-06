@@ -1,9 +1,0 @@
-CURRÍCULO — NB ARQUITETURA E INTERIORES
-
-Este é um arquivo temporário para validar o botão de download.
-Substitua este arquivo pelo currículo definitivo e, se usar PDF, atualize o link em app/sobre/page.tsx.
-
-Nome: [Nome da profissional]
-Formação: [Formação]
-Experiência: [Experiências profissionais]
-Contato: contato@nbarquitetura.com
