@@ -86,6 +86,13 @@ export default function ProjectDetailClient({
     <>
       <div className="project-detail">
         <div className="project-gallery">
+          {imageCount > 0 && (
+            <p className="gallery-hint">
+              <span aria-hidden="true">⤢</span>
+              Clique nas imagens para ampliar
+            </p>
+          )}
+
           {/* Quantidade ímpar */}
           {hasOddNumberOfImages && (
             <>
@@ -96,7 +103,7 @@ export default function ProjectDetailClient({
               {oddGalleryImages.length > 0 && (
                 <div className="gallery-grid">
                   {oddGalleryImages.map((image) =>
-                    renderImage(image),
+                    renderImage(image)
                   )}
                 </div>
               )}
@@ -119,9 +126,9 @@ export default function ProjectDetailClient({
                   </div>
 
                   {sideBySideImages.length > 0 && (
-                    <div className="gallery-grid">
+                    <div className="gallery-grid gallery-grid--even">
                       {sideBySideImages.map((image) =>
-                        renderImage(image),
+                        renderImage(image)
                       )}
                     </div>
                   )}

@@ -28,10 +28,10 @@ export default function Sobre() {
           alt="Identidade NB Arquitetura e Interiores"
         />
         <div className="prose">
-          <h2>
+          {/* <h2>
             Uma trajetória construída
             entre espaço e detalhe.
-          </h2>
+          </h2> */}
 
           <h2>Olá, sou Natasha Bandeira.</h2>
 
@@ -81,9 +81,9 @@ export default function Sobre() {
       </section>
         <div className="timeline">
           <div>
-            <strong>2024 — atual</strong>
+            <strong>2026 - Atual</strong>
             <span>
-              <b>Estagiário de Arquitetura · Rohen Arquitetura</b><br />
+              <b>Arquiteta · Rohen Arquitetura</b><br />
               Desenvolvimento de projetos arquitetônicos e de interiores,
               elaboração de cadernos executivos, detalhamentos técnicos,
               modelagem 3D e documentação para execução de obras.
@@ -91,7 +91,17 @@ export default function Sobre() {
           </div>
 
           <div>
-            <strong>2024 — 2025</strong>
+            <strong>2025</strong>
+            <span>
+              <b>Estagiária de Arquitetura · Rohen Arquitetura</b><br />
+              Desenvolvimento de projetos arquitetônicos e de interiores,
+              elaboração de cadernos executivos, detalhamentos técnicos,
+              modelagem 3D e documentação para execução de obras.
+            </span>
+          </div>
+
+          <div>
+            <strong>2024</strong>
             <span>
               <b>Projetista · RBA Decor</b><br />
               Desenvolvimento de projetos de móveis planejados residenciais
@@ -103,7 +113,7 @@ export default function Sobre() {
           <div>
             <strong>2023</strong>
             <span>
-              <b>Estagiário de Arquitetura · Panton Engenharia e Arquitetura</b><br />
+              <b>Estagiária de Arquitetura · Panton Engenharia e Arquitetura</b><br />
               Produção de documentação executiva, desenhos técnicos,
               detalhamentos construtivos, modelagem 3D e compatibilização
               entre projetos arquitetônicos e complementares.
@@ -113,7 +123,7 @@ export default function Sobre() {
           <div>
             <strong>2023</strong>
             <span>
-              <b>Estagiário de Arquitetura · Giovanni Cariello</b><br />
+              <b>Estagiária de Arquitetura · Giovanni Cariello</b><br />
               Desenvolvimento de projetos residenciais e interiores,
               cadernos executivos, detalhamento de marcenaria,
               modelagem tridimensional e organização de pranchas técnicas.
@@ -123,7 +133,7 @@ export default function Sobre() {
           <div>
             <strong>2022 — 2023</strong>
             <span>
-              <b>Estagiário de Construção Civil · Predial Primus</b><br />
+              <b>Estagiária de Construção Civil · Predial Primus</b><br />
               Acompanhamento de obras, fiscalização de execução,
               controle de materiais, atualização de diário de obra
               e suporte à equipe de engenharia.

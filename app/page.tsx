@@ -143,10 +143,10 @@ export default async function Home() {
             </div>
 
             <div>
-              <span>01 / {featured.title}</span>
+              <span>01 / {featured.subtitle || featured.type}</span>
 
               <h2>
-                {featured.subtitle || featured.title}
+                {featured.title}
               </h2>
 
               <p>
