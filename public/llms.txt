@@ -1,0 +1,28 @@
+# NB Arquitetura e Interiores
+
+> Portfólio profissional de Natasha Almeida Bandeira, arquiteta com atuação em projetos de interiores, arquitetura comercial, espaços externos e design em Nova Friburgo, Rio de Janeiro, Brasil.
+
+O site apresenta a trajetória profissional de Natasha Almeida Bandeira, seus campos de atuação e uma seleção de projetos desenvolvidos em diferentes contextos profissionais e acadêmicos.
+
+Nem todos os projetos apresentados são de autoria integral da profissional. Algumas participações estiveram relacionadas especificamente à modelagem 3D, produção de imagens e renderização a partir de projetos e conceitos previamente desenvolvidos. A natureza da contribuição é informada na apresentação de cada projeto.
+
+## Páginas principais
+
+- [Página inicial](https://nb-arquitetura.vercel.app/): apresentação do portfólio e projetos em destaque.
+- [Sobre](https://nb-arquitetura.vercel.app/sobre): trajetória, experiência e formação profissional.
+- [Interiores](https://nb-arquitetura.vercel.app/interiores): projetos de interiores.
+- [Comercial](https://nb-arquitetura.vercel.app/comercial): projetos de arquitetura comercial.
+- [Externos](https://nb-arquitetura.vercel.app/externos): fachadas, áreas externas e projetos relacionados.
+- [Design](https://nb-arquitetura.vercel.app/design): trabalhos de design e identidade visual.
+- [Contato](https://nb-arquitetura.vercel.app/contato): canais profissionais de contato.
+
+## Contato profissional
+
+- [Instagram](https://www.instagram.com/arq_natasha_almeida/)
+- [LinkedIn](https://www.linkedin.com/in/natasha-bandeira-23548525b/)
+- [WhatsApp](https://wa.me/5522998109553)
+- E-mail: arq.natashabandeira@gmail.com
+
+## Localização
+
+Nova Friburgo, Rio de Janeiro, Brasil.
