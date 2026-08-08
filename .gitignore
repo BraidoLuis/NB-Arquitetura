@@ -13,3 +13,8 @@
 
 # Vercel
 .vercel
+
+# Testes
+coverage/
+playwright-report/
+test-results/
