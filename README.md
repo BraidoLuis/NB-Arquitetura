@@ -1,184 +1,181 @@
 # NB Arquitetura e Interiores
 
-Portfólio profissional desenvolvido para a arquiteta **Natasha Almeida Bandeira**, com o objetivo de apresentar sua trajetória, experiência profissional e projetos desenvolvidos nas áreas de **interiores, arquitetura comercial e espaços externos**.
+Portfólio profissional desenvolvido para a arquiteta **Natasha Almeida Bandeira**, com o objetivo de apresentar sua trajetória, experiência e projetos nas áreas de **interiores, arquitetura comercial, espaços externos e design**.
 
-O projeto foi criado para transmitir a identidade visual da arquiteta através de uma experiência digital imersiva, valorizando imagens, composição visual, materiais, iluminação e a narrativa por trás de cada projeto.
+O site combina uma identidade visual editorial com uma experiência imersiva, valorizando fotografias, composição, materiais, iluminação e a narrativa de cada projeto.
 
-O site funciona como uma apresentação profissional da arquiteta, reunindo sua história, experiências, processos de desenvolvimento e projetos realizados.
-
----
-
-# 🌐 Site publicado
-
-Acesse o projeto online:
-
-**Link da Vercel:**  
-https://nb-arquitetura.vercel.app/
+Além da área pública, o projeto possui um **painel administrativo integrado ao Supabase**, permitindo que a própria arquiteta gerencie o conteúdo do portfólio.
 
 ---
 
-# 🚀 Tecnologias utilizadas
+## 🌐 Site publicado
 
-O projeto foi desenvolvido utilizando uma stack moderna para aplicações web, priorizando performance, responsividade e facilidade de manutenção.
+Acesse o projeto:
 
-## Front-end
-
-### Next.js
-
-Framework React utilizado para construção da aplicação, gerenciamento das páginas, otimização de carregamento e estrutura do projeto.
-
-### React.js
-
-Biblioteca utilizada para criação dos componentes da interface, permitindo uma organização modular e reutilizável.
-
-### TypeScript
-
-Utilizado para garantir maior segurança no desenvolvimento através de tipagem estática, melhor organização e facilidade de manutenção.
-
-### CSS3
-
-Responsável pela construção da identidade visual do projeto, incluindo:
-
-- Layout responsivo;
-- Animações;
-- Transições;
-- Efeitos visuais;
-- Composição das páginas;
-- Adaptação para diferentes dispositivos.
-
-## Deploy
-
-### Vercel
-
-Plataforma utilizada para hospedagem e publicação do projeto, integrada ao GitHub para facilitar atualizações e deploy contínuo.
+[https://nb-arquitetura.vercel.app](https://nb-arquitetura.vercel.app)
 
 ---
 
-# ✨ Sobre o projeto
+## ✨ Funcionalidades
 
-O objetivo deste portfólio foi criar uma experiência digital alinhada ao universo da arquitetura, fugindo de um formato tradicional de apresentação e utilizando uma abordagem mais editorial e visual.
+### Área pública
 
-A interface foi desenvolvida para valorizar:
+- Home com navegação fluida entre seções;
+- Colagens de imagens e animações durante o scroll;
+- Projeto em destaque;
+- Projeto em andamento;
+- Página sobre a trajetória profissional;
+- Currículo disponível para download;
+- Projetos organizados por categoria;
+- Páginas individuais geradas por slug;
+- Galerias responsivas;
+- Lightbox com ampliação e zoom;
+- Página de contato;
+- Links para e-mail, Instagram, LinkedIn e WhatsApp;
+- Interface responsiva para desktop, tablet e dispositivos móveis.
 
-- A história profissional da arquiteta;
-- O processo criativo por trás dos projetos;
-- A composição visual dos ambientes;
-- A apresentação de imagens em destaque;
-- A identidade estética da profissional.
+### Categorias
 
----
+- Interiores;
+- Comercial;
+- Externos;
+- Design.
 
-# 📌 Funcionalidades
+### Painel administrativo
 
-## Home
+Disponível em:
 
-Página inicial com experiência visual imersiva contendo:
-
-- Navegação fluida por seções;
-- Animações durante o scroll;
-- Composição de imagens em formato de colagem;
-- Elementos sobrepostos;
-- Destaques visuais dos segmentos de atuação.
-
----
-
-## Sobre mim
-
-Página dedicada à apresentação da trajetória profissional da arquiteta, contendo:
-
-- História profissional;
-- Experiência em escritórios de arquitetura;
-- Linha do tempo da carreira;
-- Habilidades desenvolvidas;
-- Currículo para download.
-
----
-
-## Interiores
-
-Página destinada à apresentação dos projetos de interiores desenvolvidos pela arquiteta.
-
-Inclui:
-
-- Imagens dos ambientes;
-- Descrição dos projetos;
-- Conceito dos espaços;
-- Materiais e soluções utilizadas.
-
----
-
-## Comercial
-
-Página dedicada aos projetos comerciais, apresentando soluções arquitetônicas voltadas para espaços corporativos e estabelecimentos.
-
-Inclui:
-
-- Desenvolvimento de conceitos;
-- Organização dos ambientes;
-- Soluções funcionais;
-- Elementos estéticos aplicados ao projeto.
-
----
-
-## Externos
-
-Página destinada aos projetos externos e áreas abertas.
-
-Apresenta trabalhos relacionados a:
-
-- Fachadas;
-- Áreas externas;
-- Paisagismo;
-- Integração entre arquitetura e ambiente.
-
----
-
-## Contato
-
-Página com os principais canais profissionais:
-
-- E-mail;
-- Instagram;
-- LinkedIn;
-- WhatsApp.
-
----
-
-# 📂 Estrutura do projeto
-
+```text
+/admin
 ```
+
+O painel permite:
+
+- Login exclusivo da administradora;
+- Cadastro de projetos;
+- Edição de projetos;
+- Exclusão de projetos;
+- Publicação e ocultação de projetos;
+- Organização por categoria;
+- Upload de múltiplas imagens;
+- Reordenação das imagens;
+- Definição da imagem de capa;
+- Escolha do enquadramento da capa;
+- Definição do projeto em destaque;
+- Definição do projeto em andamento;
+- Remoção automática das imagens do Storage ao excluir um projeto;
+- Atualização das páginas públicas a partir do banco de dados.
+
+---
+
+## 🚀 Tecnologias utilizadas
+
+### Front-end
+
+- **Next.js 16** — framework React e estrutura da aplicação;
+- **React 19** — componentes e interfaces interativas;
+- **TypeScript** — tipagem estática e maior segurança no desenvolvimento;
+- **CSS3** — identidade visual, responsividade, animações e transições;
+- **Tailwind CSS/PostCSS** — processamento e suporte à camada de estilos;
+- **Yet Another React Lightbox** — galeria com ampliação e zoom.
+
+### Back-end e dados
+
+- **Supabase PostgreSQL** — armazenamento dos projetos;
+- **Supabase Auth** — autenticação da administradora;
+- **Supabase Storage** — armazenamento das imagens;
+- **Row Level Security (RLS)** — controle de acesso ao banco e ao Storage;
+- **Supabase SSR** — integração da autenticação com o Next.js.
+
+### Infraestrutura
+
+- **GitHub** — versionamento do código;
+- **Vercel** — hospedagem e deploy contínuo;
+- **Supabase** — banco, autenticação e arquivos.
+
+---
+
+## 🔐 Segurança
+
+O sistema utiliza políticas RLS para controlar as operações:
+
+- Visitantes podem consultar somente projetos publicados;
+- Somente usuários cadastrados na tabela `admins` podem criar, editar ou excluir projetos;
+- Cadastros públicos e autenticação anônima permanecem desativados;
+- Uploads são restritos a JPEG, PNG, WebP e AVIF;
+- Cada imagem pode ter no máximo **1,5 MB**;
+- A chave utilizada no navegador é somente a Publishable key do Supabase;
+- Nenhuma `secret key`, `service_role` ou senha do banco é armazenada no repositório.
+
+> As imagens do portfólio ficam em um bucket público para serem exibidas no site. Arquivos confidenciais não devem ser enviados pelo painel.
+
+---
+
+## 📂 Estrutura do projeto
+
+```text
 app/
-│
-├── page.tsx                  # Página inicial
-├── components.tsx            # Header, Footer e componentes reutilizáveis
-├── globals.css               # Estilos globais, identidade visual e animações
-│
-├── sobre/
-│   └── page.tsx              # História e experiência profissional
-│
-├── projetos/
-│   └── page.tsx              # Página de interiores
-│
-├── interiores/
-│   └── page.tsx              # Página comercial
-│
+├── admin/
+│   ├── login/
+│   ├── AdminDashboard.tsx
+│   ├── layout.tsx
+│   └── page.tsx
+├── comercial/
+├── contato/
 ├── design/
-│   └── page.tsx              # Página de externos
-│
-└── contato/
-    └── page.tsx              # Informações de contato
-```
+├── externos/
+├── interiores/
+├── projetos/
+│   └── [slug]/
+├── sobre/
+├── CategoryProjects.tsx
+├── components.tsx
+├── data.ts
+├── globals.css
+├── layout.tsx
+└── page.tsx
 
-Arquivos de imagens:
+lib/
+├── supabase/
+│   ├── client.ts
+│   └── server.ts
+├── projects.ts
+└── types.ts
 
-```
 public/
 └── images/
+
+supabase/
+└── setup.sql
+
+.env.example
+proxy.ts
+SUPABASE.md
 ```
 
 ---
 
-# 💻 Executar localmente
+## 💻 Executar localmente
+
+### Requisitos
+
+- Node.js 20.9 ou superior;
+- npm;
+- Projeto configurado no Supabase.
+
+### Instalação
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/BraidoLuis/NB-Arquitetura.git
+```
+
+Entre na pasta:
+
+```bash
+cd NB-Arquitetura
+```
 
 Instale as dependências:
 
@@ -186,95 +183,134 @@ Instale as dependências:
 npm install
 ```
 
-Execute o projeto:
+Crie o arquivo `.env.local` a partir do `.env.example`:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://SEU-PROJETO.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=sb_publishable_SUA_CHAVE
+```
+
+Execute o ambiente de desenvolvimento:
 
 ```bash
 npm run dev
 ```
 
-A aplicação estará disponível em:
+Acesse:
 
-```
+```text
 http://localhost:3000
 ```
 
+Painel administrativo:
+
+```text
+http://localhost:3000/admin
+```
+
 ---
 
-# 📄 Currículo
+## 🗄️ Configuração do Supabase
 
-O currículo profissional utilizado no site deve estar localizado em:
+As instruções completas estão disponíveis em:
 
+[`SUPABASE.md`](./SUPABASE.md)
+
+O arquivo responsável por criar tabelas, políticas, função administrativa, conteúdo inicial e bucket é:
+
+```text
+supabase/setup.sql
 ```
-public/curriculo-nb.pdf
+
+Nunca coloque no código ou nas variáveis públicas:
+
+- Senha do banco;
+- Secret key;
+- `service_role`.
+
+---
+
+## 📄 Currículo
+
+O currículo utilizado no site está localizado em:
+
+```text
+public/images/Portfólio-Natasha.pdf
 ```
 
-O botão de download está configurado na página:
+O botão de download está configurado em:
 
-```
+```text
 app/sobre/page.tsx
 ```
 
 ---
 
-# 🎨 Personalização
+## 🖼️ Gerenciamento das imagens
 
-Principais arquivos para alteração:
+- A primeira imagem da lista é utilizada como capa;
+- As setas do painel alteram a ordem;
+- O enquadramento define o ponto focal da capa nos cards;
+- Cada arquivo pode ter no máximo 1,5 MB;
+- Recomenda-se utilizar WebP ou JPEG otimizado;
+- As imagens enviadas pelo painel ficam no Supabase Storage;
+- Imagens antigas presentes em `public/images` continuam funcionando normalmente.
 
-Página inicial:
+---
 
-```
-app/page.tsx
-```
+## 🧪 Comandos disponíveis
 
-Componentes globais:
+Executar em desenvolvimento:
 
-```
-app/components.tsx
-```
-
-Estilos e identidade visual:
-
-```
-app/globals.css
+```bash
+npm run dev
 ```
 
-Conteúdo das páginas:
+Validar o código:
 
-```
-app/sobre/page.tsx
-app/projetos/page.tsx
-app/interiores/page.tsx
-app/design/page.tsx
-app/contato/page.tsx
+```bash
+npm run lint
 ```
 
-Imagens:
+Gerar a compilação de produção:
 
+```bash
+npm run build
 ```
-public/images/
+
+Executar a compilação:
+
+```bash
+npm run start
 ```
 
 ---
 
-# 📦 Deploy
+## 📦 Deploy
 
-O projeto foi publicado utilizando a plataforma Vercel.
+O projeto utiliza deploy contínuo pela Vercel.
 
-Processo utilizado:
+Fluxo:
 
-1. Código versionado através do GitHub;
-2. Repositório conectado à Vercel;
-3. Build automático utilizando Next.js;
-4. Aplicação publicada online.
+1. O código é enviado para o GitHub;
+2. Pull Requests geram Preview Deployments;
+3. O merge na `main` gera um deployment de produção;
+4. A Vercel utiliza as variáveis do Supabase configuradas no projeto.
+
+Variáveis necessárias:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+```
+
+As variáveis devem estar cadastradas nos ambientes **Production** e **Preview** da Vercel.
 
 ---
 
-# 👩‍💻 Projeto desenvolvido para
+## 👩‍💻 Projeto desenvolvido para
 
 **Natasha Almeida Bandeira**  
 Arquitetura e Interiores
 
-Portfólio desenvolvido para apresentar sua trajetória profissional, projetos desenvolvidos e identidade arquitetônica através de uma experiência digital moderna e visual.
-# Painel administrativo
-
-O projeto inclui um painel em `/admin` para administrar projetos e imagens com Supabase. Consulte [`SUPABASE.md`](SUPABASE.md) para fazer a configuração inicial. O limite de upload é de **1,5 MB por imagem**, validado no navegador e no Storage.
+Portfólio desenvolvido para apresentar sua trajetória, seus projetos e sua identidade profissional por meio de uma experiência digital moderna, visual e administrável.
