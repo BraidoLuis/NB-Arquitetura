@@ -84,14 +84,90 @@ export function Header() {
 }
 
 export function Footer() {
-  return <footer className="footer">
-    <div><p className="eyebrow">Vamos criar juntos?</p><h2>Transformamos ideias<br/>em espaços com <em>alma.</em></h2></div>
-    <div className="footer-links">
-      <a href="mailto:arq.natashabandeira@gmail.com">E-mail ↗</a><a href="https://www.instagram.com/arq_natasha_almeida/" target="_blank">Instagram ↗</a>
-      <a href="https://www.linkedin.com/in/natasha-bandeira-23548525b/" target="_blank">LinkedIn ↗</a><a href="https://wa.me/5522998109553?text=Olá%21%20Vi%20seu%20portfólio%20de%20arquitetura%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank">WhatsApp ↗</a>
-    </div>
-    <div className="footer-bottom"><span>© 2026 NB Arquitetura e Interiores</span><Link href="/contato">Rio de Janeiro - Nova Friburgo, Brasil</Link></div>
-  </footer>;
+  return (
+    <footer className="footer">
+      <div className="footer-intro">
+        <div className="footer-heading">
+          <p className="eyebrow">Vamos criar juntos?</p>
+
+          <h2>
+            Transformamos ideias
+            <br />
+            em espaços com <em>alma.</em>
+          </h2>
+        </div>
+
+        <div className="footer-disclaimer">
+          <p className="eyebrow">Sobre os projetos</p>
+
+          <p>
+            Este portfólio reúne projetos desenvolvidos em diferentes
+            contextos e etapas da minha trajetória profissional e acadêmica.
+            Nem todos os projetos apresentados são de minha autoria integral:
+            em alguns trabalhos, minha participação esteve direcionada
+            especificamente à modelagem 3D, produção de imagens e renderização,
+            a partir de projetos e conceitos previamente desenvolvidos.
+          </p>
+
+          <p>
+            A apresentação de cada projeto busca destacar, de forma
+            transparente, a natureza da minha contribuição e as habilidades
+            técnicas envolvidas em cada trabalho, valorizando tanto o processo
+            de desenvolvimento quanto o resultado final.
+          </p>
+        </div>
+      </div>
+
+      <div className="footer-links">
+        <a href="mailto:arq.natashabandeira@gmail.com">
+          E-mail ↗
+        </a>
+
+        <a
+          href="https://www.instagram.com/arq_natasha_almeida/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram ↗
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/natasha-bandeira-23548525b/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn ↗
+        </a>
+
+        <a
+          href="https://wa.me/5522998109553?text=Olá%21%20Vi%20seu%20portfólio%20de%20arquitetura%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WhatsApp ↗
+        </a>
+      </div>
+
+      <div className="footer-bottom">
+        <span>© 2026 NB Arquitetura e Interiores</span>
+
+        <span className="footer-developer">
+          Desenvolvido por{" "}
+          <a
+            href="https://www.linkedin.com/in/luís-felipe-dos-santos-braido-857a28352/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Luís Felipe Braido ↗
+          </a>
+        </span>
+
+        <Link href="/contato">
+          Rio de Janeiro — Nova Friburgo, Brasil
+        </Link>
+      </div>
+    </footer>
+  );
 }
 
 export function PageShell({ children }: { children: React.ReactNode }) {
