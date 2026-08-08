@@ -5,8 +5,12 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import type { Project } from "@/lib/types";
+import {
+  slugify,
+  storagePathFromUrl,
+  validateProjectImage,
+} from "@/lib/project-utils";
 
-const MAX_FILE_SIZE = 1.5 * 1024 * 1024;
 const EMPTY_PROJECT: Project = {
   slug: "",
   type: "Interiores",
@@ -23,15 +27,6 @@ const EMPTY_PROJECT: Project = {
   sort_order: 0,
 };
 
-function slugify(value: string) {
-  return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
-    .trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-}
-
-function storagePathFromUrl(url: string) {
-  const marker = "/storage/v1/object/public/project-images/";
-  return url.includes(marker) ? decodeURIComponent(url.split(marker)[1]) : null;
-}
 
 export default function AdminDashboard({ userEmail }: { userEmail: string }) {
   const router = useRouter();
@@ -93,14 +88,19 @@ export default function AdminDashboard({ userEmail }: { userEmail: string }) {
     event.target.value = "";
     if (!files.length) return;
 
-    const invalid = files.find((file) => !file.type.startsWith("image/") || file.size > MAX_FILE_SIZE);
-    if (invalid) {
+    const invalidImage = files
+      .map((file) => ({
+        file,
+        error: validateProjectImage(file),
+      }))
+      .find((item) => item.error !== null);
+
+    if (invalidImage?.error) {
       setMessage({
         type: "error",
-        text: !invalid.type.startsWith("image/")
-          ? `${invalid.name} não é uma imagem válida.`
-          : `${invalid.name} ultrapassa o limite de 1,5 MB. Comprima a imagem antes de enviar.`,
+        text: invalidImage.error,
       });
+
       return;
     }
 
