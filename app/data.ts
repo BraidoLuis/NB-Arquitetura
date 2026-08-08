@@ -1,4 +1,6 @@
-export const projects = [
+import type { Project } from "@/lib/types";
+
+export const projects: Project[] = [
   {
     slug: "gll-topografia",
     type: "Comercial",
@@ -12,10 +14,12 @@ export const projects = [
     ],
     position: "left center",
     summary: "Projeto de interiores comercial com foco em funcionalidade e identidade de marca.",
-    text: "Com atuação voltada à topografia e geotecnologias, a GLL desenvolve serviços que garantem segurança e precisão para todas as etapas de um empreendimento, desde o levantamento inicial até o acompanhamento da execução da obra."
+    text: "Com atuação voltada à topografia e geotecnologias, a GLL desenvolve serviços que garantem segurança e precisão para todas as etapas de um empreendimento, desde o levantamento inicial até o acompanhamento da execução da obra.",
+    featured: true,
+    sort_order: 10,
   },
   {
-    slug: "Projeto-5-Igreja-Batista-NF",
+    slug: "projeto-5-igreja-batista-nf",
     type: "Comercial",
     title: "Projeto 5° Igreja Batista NF",
     place: "Nova Friburgo · 2026",
@@ -46,7 +50,7 @@ export const projects = [
     text: "Projeto de fachada que integra elementos naturais e contemporâneos, valorizando a paisagem local."
   },
   {
-    slug: "MD-Contabilidade",
+    slug: "md-contabilidade",
     type: "Comercial",
     title: "MD Contabilidade",
     place: "Nova Friburgo · 2026",
@@ -63,7 +67,7 @@ export const projects = [
     text: "Projeto de fachada que integra elementos naturais e contemporâneos, valorizando a paisagem local."
   },
   {
-    slug: "Studio-Edificio-Redondo",
+    slug: "studio-edificio-redondo",
     type: "Interiores",
     title: "Studio Edificio Redondo",
     place: "Nova Friburgo · 2026",
@@ -123,5 +127,40 @@ export const projects = [
     position: "center center",
     summary: "Fachada que integra arquitetura contemporânea à paisagem natural da região.",
     text: "Projeto de fachada que integra elementos naturais e contemporâneos, valorizando a paisagem local."
+  },
+  {
+    slug: "lofts-cabo-frio",
+    type: "Em andamento",
+    title: "Lofts Cabo Frio",
+    subtitle: "Um novo capítulo",
+    place: "Cabo Frio · 2026",
+    images: ["/images/loft-2.png", "/images/loft-1.jpeg"],
+    position: "center center",
+    summary: "Projeto em desenvolvimento que une inovação, conforto e sustentabilidade.",
+    text: "Acompanhe as novidades e cada etapa deste projeto em nossas redes sociais.",
+    in_progress: true,
+    sort_order: 100,
+  },
+  {
+    slug: "marca-nb",
+    type: "Design",
+    title: "Marca NB",
+    subtitle: "Identidade visual",
+    place: "Nova Friburgo · 2026",
+    images: ["/images/design-cartao.jpeg"],
+    position: "center center",
+    summary: "Uma identidade elegante e atemporal para traduzir arquitetura e interiores.",
+    text: "Desenvolvimento da identidade visual NB, do conceito às aplicações da marca.",
+  },
+  {
+    slug: "colecao-essencial",
+    type: "Design",
+    title: "Coleção Essencial",
+    subtitle: "Design de produto",
+    place: "Nova Friburgo · 2026",
+    images: ["/images/design-caneca.png"],
+    position: "center center",
+    summary: "Aplicações que prolongam a linguagem da marca em objetos cotidianos.",
+    text: "Coleção de objetos desenvolvida para levar a identidade NB a diferentes pontos de contato.",
   }
 ];

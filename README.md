@@ -275,3 +275,6 @@ Processo utilizado:
 Arquitetura e Interiores
 
 Portfólio desenvolvido para apresentar sua trajetória profissional, projetos desenvolvidos e identidade arquitetônica através de uma experiência digital moderna e visual.
+# Painel administrativo
+
+O projeto inclui um painel em `/admin` para administrar projetos e imagens com Supabase. Consulte [`SUPABASE.md`](SUPABASE.md) para fazer a configuração inicial. O limite de upload é de **1,5 MB por imagem**, validado no navegador e no Storage.
