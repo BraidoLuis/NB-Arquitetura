@@ -87,6 +87,13 @@ O painel permite:
 - **Row Level Security (RLS)** — controle de acesso ao banco e ao Storage;
 - **Supabase SSR** — integração da autenticação com o Next.js.
 
+### Qualidade e testes
+
+- **Vitest** — testes unitários das regras de validação e tratamento de dados;
+- **Playwright** — testes E2E que simulam a navegação real pelo portfólio;
+- **ESLint** — análise estática e padronização do código;
+- **V8 Coverage** — geração do relatório de cobertura dos testes unitários.
+
 ### Infraestrutura
 
 - **GitHub** — versionamento do código;
@@ -139,6 +146,7 @@ lib/
 ├── supabase/
 │   ├── client.ts
 │   └── server.ts
+├── project-utils.ts
 ├── projects.ts
 └── types.ts
 
@@ -148,6 +156,13 @@ public/
 supabase/
 └── setup.sql
 
+tests/
+├── e2e/
+│   └── public-navigation.spec.ts
+└── project-utils.test.ts
+
+playwright.config.ts
+vitest.config.mts
 .env.example
 proxy.ts
 SUPABASE.md
@@ -258,6 +273,44 @@ app/sobre/page.tsx
 
 ---
 
+## ✅ Testes automatizados
+
+O projeto possui **20 testes automatizados**, divididos entre testes unitários e testes de ponta a ponta.
+
+### Testes unitários
+
+Foram implementados **10 testes com Vitest** para validar:
+
+- Conversão de títulos em slugs;
+- Remoção de acentos;
+- Tratamento de caracteres especiais;
+- Extração do caminho de imagens do Supabase Storage;
+- Identificação de imagens locais;
+- Validação dos formatos permitidos;
+- Aceitação de imagens válidas;
+- Aceitação de arquivos com exatamente 1,5 MB;
+- Bloqueio de arquivos acima de 1,5 MB;
+- Bloqueio de formatos não permitidos.
+
+O arquivo `lib/project-utils.ts` possui **100% de cobertura de statements, branches, functions e lines**.
+
+### Testes E2E
+
+Foram implementados **10 testes com Playwright**, executados no Chromium, para simular a experiência de um visitante:
+
+- Carregamento da página inicial;
+- Navegação da Home para a página Sobre;
+- Acesso às páginas de categorias;
+- Abertura da página de contato;
+- Navegação de uma categoria para os detalhes de um projeto;
+- Abertura do lightbox das imagens;
+- Fechamento do lightbox pelo teclado;
+- Validação do link do WhatsApp;
+- Exibição da página 404 para projetos inexistentes;
+- Proteção do painel administrativo contra visitantes não autenticados.
+
+Os testes E2E não cadastram, editam ou excluem informações no banco de produção.
+
 ## 🧪 Comandos disponíveis
 
 Executar em desenvolvimento:
@@ -266,7 +319,43 @@ Executar em desenvolvimento:
 npm run dev
 ```
 
-Validar o código:
+Executar os testes unitários:
+
+```bash
+npm test
+```
+
+Executar os testes unitários em modo de observação:
+
+```bash
+npm run test:watch
+```
+
+Gerar o relatório de cobertura dos testes unitários:
+
+```bash
+npm run test:coverage
+```
+
+Executar os testes E2E com Playwright:
+
+```bash
+npm run test:e2e
+```
+
+Executar os testes E2E em modo visual:
+
+```bash
+npm run test:e2e:ui
+```
+
+Abrir o último relatório HTML do Playwright:
+
+```bash
+npm run test:e2e:report
+```
+
+Validar o código com ESLint:
 
 ```bash
 npm run lint
@@ -278,7 +367,7 @@ Gerar a compilação de produção:
 npm run build
 ```
 
-Executar a compilação:
+Executar a compilação de produção:
 
 ```bash
 npm run start
