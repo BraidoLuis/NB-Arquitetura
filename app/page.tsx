@@ -5,6 +5,9 @@ import {
   Reveal,
   HomeScrollController,
 } from "./components";
+import { getHomeProjects } from "@/lib/projects";
+
+export const revalidate = 60;
 
 const chapters = [
   {
@@ -61,7 +64,8 @@ const chapters = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const { featured, inProgress } = await getHomeProjects();
   return (
     <>
       <Header />
@@ -130,49 +134,45 @@ export default function Home() {
           ))}
         </div>
 
-        <section className="selected">
-          <p className="eyebrow">Projeto em destaque · 2025</p>
+        {featured && <section className="selected">
+          <p className="eyebrow">Projeto em destaque · {featured.place}</p>
 
           <div className="selected-grid">
             <div className="selected-image">
-              <img src="/images/gll-1.jpeg" alt="Projeto GLL Topografia" />
+              <img src={featured.images[0]} alt={featured.title} />
             </div>
 
             <div>
-              <span>01 / GLL Topografia</span>
+              <span>01 / {featured.title}</span>
 
               <h2>
-                Onde a
-              <br />
-                precisão encontra a <em>confiança.</em>
+                {featured.subtitle || featured.title}
               </h2>
 
               <p>
-                Com atuação voltada à topografia e geotecnologias, a GLL desenvolve serviços
-                que garantem segurança e precisão para todas as etapas de um empreendimento,
-                desde o levantamento inicial até o acompanhamento da execução da obra.
+                {featured.summary}
               </p>
 
-              <Link className="button-outline" href="/projetos/gll-topografia">
+              <Link className="button-outline" href={`/projetos/${featured.slug}`}>
                 Conhecer o projeto
               </Link>
             </div>
           </div>
-        </section>
+        </section>}
 
-        <section className="selected">
-          <p className="eyebrow">Em andamento · 2026</p>
+        {inProgress && <section className="selected">
+          <p className="eyebrow">Em andamento · {inProgress.place}</p>
 
           <div className="selected-grid">
             <div className="selected-image">
               <img
-                src="/images/loft-2.png"
-                alt="Projeto em andamento"
+                src={inProgress.images[0]}
+                alt={inProgress.title}
               />
             </div>
 
             <div>
-              <span>Lofts Cabo Frio</span>
+              <span>{inProgress.title}</span>
 
               <h2>
                 Em breve:<br />
@@ -180,8 +180,7 @@ export default function Home() {
               </h2>
 
               <p>
-                Estamos desenvolvendo um projeto que une inovação, conforto e sustentabilidade.
-                Acompanhe as novidades em nosso Instagram e fique por dentro de cada etapa.
+                {inProgress.summary}
               </p>
 
               <a
@@ -193,7 +192,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </section>
+        </section>}
       </main>
 
       <div className="home-footer">

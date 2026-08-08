@@ -1,12 +1,10 @@
 import { notFound } from "next/navigation";
 import { PageShell } from "../../components";
-import { projects } from "../../data";
+import { getProjectBySlug } from "@/lib/projects";
 import ProjectDetailClient from "./ProjectDetailClient";
 import BackButton from "./BackButton"; 
 
-export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
-}
+export const revalidate = 60;
 
 export default async function ProjectDetail({
   params,
@@ -14,7 +12,7 @@ export default async function ProjectDetail({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+  const project = await getProjectBySlug(slug);
   if (!project) notFound();
 
   const { images, title, subtitle, text, type } = project;
@@ -27,7 +25,7 @@ export default async function ProjectDetail({
       <ProjectDetailClient
         images={images}
         title={title}
-        subtitle={subtitle}
+        subtitle={subtitle ?? undefined}
         text={text}
         type={type}
       />
